@@ -45,7 +45,7 @@
       "openjdk"
       "openssh"
       "poetry"
-      "pnpm"
+      { name = "pnpm"; args = [ "--overwrite" ]; }
       "pyenv"
       "python@3.12"
       "rust"

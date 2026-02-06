@@ -8,6 +8,19 @@
   ];
 
   programs.git.enable = true;
+  programs.git.settings = {
+    user = {
+      name = "Daffa Hilmy Fadhlurrohman";
+      email = "daffahilmanafrizal@gmail.com";
+      signingKey = "/Users/daffahilmyf/.ssh/github.pub";
+    };
+    gpg = {
+      format = "ssh";
+    };
+    commit = {
+      gpgsign = true;
+    };
+  };
 
   programs.starship.enable = true;
   programs.pyenv.enable = true;
