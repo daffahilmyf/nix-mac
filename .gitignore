@@ -1,0 +1,16 @@
+# Nix build results
+/result
+/result-*
+
+# Nix/direnv
+/.direnv
+
+# macOS
+.DS_Store
+
+# Home Manager backups
+*.hm-backup
+
+# Environment files
+.env
+.env.*
