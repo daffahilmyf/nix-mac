@@ -9,6 +9,12 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Remove preexisting nixbld users
+        run: |
+          for i in $(seq 1 32); do
+            sudo dscl . -delete /Users/_nixbld$i 2>/dev/null || true
+          done
+          sudo dscl . -delete /Groups/nixbld 2>/dev/null || true
       - uses: cachix/install-nix-action@v27
         with:
           extra_nix_config: |
