@@ -24,6 +24,10 @@
 
   programs.starship.enable = true;
   programs.pyenv.enable = true;
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.zsh = {
     enable = true;
