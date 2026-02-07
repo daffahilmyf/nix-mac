@@ -64,6 +64,11 @@
       if [[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ]]; then
         source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
       fi
+
+      # zoxide
+      if command -v zoxide >/dev/null 2>&1; then
+        eval "$(zoxide init zsh)"
+      fi
     '';
   };
 
