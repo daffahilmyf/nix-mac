@@ -42,6 +42,8 @@
       k = "kubectl";
       kns = "kubens";
       kctx = "kubectx";
+      kseal = "kubeseal --controller-name sealed-secrets --controller-namespace sealed-secrets --cert ~/.kube/sealed-secrets-cert.pem";
+      kseal-example = "echo 'kseal --format yaml --namespace your-namespace < secret.yaml > sealed-secret.yaml'";
     };
     initContent = ''
       # Use Homebrew completions when available
