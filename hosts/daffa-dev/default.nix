@@ -18,10 +18,5 @@
   system.stateVersion = 6;
   system.primaryUser = username;
 
-  users.users.${username} = {
-    home = "/Users/${username}";
-    shell = pkgs.zsh;
-  };
-
   home-manager.users.${username} = import ../../home/${username}.nix;
 }
