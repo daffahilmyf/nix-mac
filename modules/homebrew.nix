@@ -43,6 +43,7 @@
       "lazydocker"
       "hyperfine"
       "btop"
+      "buf"
       "awscli"
       "terraform"
       "terragrunt"
