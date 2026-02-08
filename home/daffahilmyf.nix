@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home.stateVersion = "24.05";
 
@@ -84,6 +84,7 @@
     "/nix/var/nix/profiles/default/bin"
     "/nix/var/nix/profiles/default/sbin"
     "$HOME/.cargo/bin"
+    "$HOME/.bun/bin"
     "$GOBIN"
     "/opt/homebrew/opt/openjdk/bin"
   ];
@@ -92,4 +93,10 @@
     source = if pkgs.stdenv.isDarwin then ./zellij/config.darwin.kdl else ./zellij/config.linux.kdl;
     force = true;
   };
+
+  home.activation.installBunGlobals = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if command -v bun >/dev/null 2>&1; then
+      bun add -g opencode-ai >/dev/null 2>&1 || true
+    fi
+  '';
 }
